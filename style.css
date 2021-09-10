@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'SourceHan';
-    src: url('./assets/SourceHanSerifCN-Regular-1.otf');
+    /* src: url('./assets/SourceHanSerifCN-Regular-1.otf'); */
+    src: url('http://nsimg.cn-bj.ufileos.com/public/SourceHanSerifCN-Regular-1.otf');
 }
 @keyframes cardin {
     from {
