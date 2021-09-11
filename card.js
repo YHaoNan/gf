@@ -77,10 +77,16 @@ function showCard(drop, pos){
                             klass: 'song-from',
                             text: `来自雨滴：${drop.word}`
                         }),
+                        span({klass: 'dot'}),
                         a({
                             klass: 'song-mv-link',
                             href: drop.song.video,
                             text: '播放MV'
+                        }),
+                        span({klass: 'dot'}),
+                        span({
+                            klass: 'song-years',
+                            text: `${drop.song.tag}`
                         })
                     ]
                 }),

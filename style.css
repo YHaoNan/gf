@@ -1,7 +1,7 @@
 @font-face {
     font-family: SourceHan;
     /* src: url('./assets/SourceHanSerifCN-Regular-1.otf'); */
-    src: url('http://nsimg.cn-bj.ufileos.com/public/SourceHanSerifCN-Regular-1.otf');
+    src: url('https://nsimg.cn-bj.ufileos.com/public/SourceHanSerifCN-Regular-1.otf');
 }
 @keyframes cardin {
     from {
@@ -82,9 +82,17 @@ body,html{
     font-size: 0.8em;
     color: #bebebe;
 }
+.card .dot {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 0.8em;
+    padding: 0.1em;
+    margin: 0 0.5em;
+}
 .card .song-mv-link {
     font-size: 0.8em;
-    margin-left: 1em;
+}
+.card .song-years {
+    font-size: 0.8em;
 }
 .card .song-lyric {
     margin-top: 40px;
