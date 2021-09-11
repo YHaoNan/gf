@@ -56,7 +56,7 @@
                     handleClicked(drop,hoverPos);
                 }
                 // 绘制悬停状态的drop样式
-                drawDrop(drop,"#f57f7f",ctx);
+                drawDrop(drop,"#ff3a3a",ctx);
                 // 设置当前悬停的Drop对象以免出现好几个drop一起被hover
                 hoverdDrop = drop;
             }else{

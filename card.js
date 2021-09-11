@@ -1,6 +1,9 @@
 function minusIfBIsPositive(a,b){
     return a - (b>0 ? b : 0);
 }
+function hightLightWord(word,html){
+    return html.replace(`${word}`, `<span class='highlight'>${word}</span>`);
+}
 function showCard(drop, pos){
     var oldCard = document.getElementsByClassName("card");
     if(oldCard && oldCard.length!=0) oldCard[0].remove();
@@ -30,14 +33,14 @@ function showCard(drop, pos){
                 }),
                 div({
                     klass: 'song-title',
-                    text: `${drop.song.name} - ${drop.song.artist}`
+                    html: hightLightWord(drop.word,`${drop.song.name}`) + `- ${drop.song.artist}`,
                 }),
                 p({
                     klass: 'song-from-and-mv',
                     children: [
                         span({
                             klass: 'song-from',
-                            text: `来自雨滴：${drop.word}`
+                            html: `来自雨滴：${hightLightWord(drop.word,drop.word)}`
                         }),
                         span({klass: 'dot'}),
                         a({
@@ -75,7 +78,7 @@ function showCard(drop, pos){
                             children: drop.song.sentences.map(s=>
                                 li({
                                     klass: 'song-sentences',
-                                    text: s
+                                    html: hightLightWord(drop.word,s)
                                 }
                             ))
                         })

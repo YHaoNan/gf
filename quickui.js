@@ -3,6 +3,7 @@ function element(config) {
     if(!config.tag)return null;
     var e = document.createElement(config.tag);
     if(config.text) e.innerText = config.text;
+    if(config.html) e.innerHTML = config.html;
     if(config.klass) e.setAttribute("class",config.klass);
     if(config.id) e.setAttribute("id",config.klass);
     if(config.onclick) e.onclick = config.onclick;
