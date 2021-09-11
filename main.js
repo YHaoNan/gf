@@ -1,9 +1,9 @@
 (function(global){
     // 一个屏幕中显示的最大DROP个数 算法问题，这个值在200-500之间比较安全
-    var DROP_COUNT = 260;
+    var DROP_COUNT = 200;
     var PUSH_DROP_INTERVAL = Math.max(parseInt(document.body.clientHeight / DROP_COUNT),1);
     // 一个DROP的最小和最大大小
-    var DROP_MIN_SIZE = 16, DROP_MAX_SIZE = 32;
+    var DROP_MIN_SIZE = 20, DROP_MAX_SIZE = 32;
     // 一个DROP最快最慢滴落速度
     // var DROP_MIN_SPEED = 0.16, DROP_MAX_SPEED = 0.2;
     var DROP_MIN_SPEED = 0.8, DROP_MAX_SPEED = 1.4;
@@ -87,7 +87,6 @@
             pushWordDrop(1);
             loopcnt = 0;
         }
-        console.log(activeWordDrops.length);
         ctx.save()
 
         window.requestAnimationFrame(mainloop);

@@ -19,7 +19,14 @@
                 ]
             })
         )
-    })
-    // global.onload = function() {
-    // }
+        append(
+            div({
+                klass: 'bottom',
+                text: '按空格查看帮助 / 关于',
+                attrs: {
+                    style: new lazyValue('display:none',3000)
+                },
+            })
+        )
+    });
 })(window);

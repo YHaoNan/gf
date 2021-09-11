@@ -3,7 +3,7 @@
     /* src: url('./assets/SourceHanSerifCN-Regular-1.otf'); */
     src: url('https://nsimg.cn-bj.ufileos.com/public/SourceHanSerifCN-Regular-1.otf');
 }
-@keyframes cardin {
+@keyframes alpha {
     from {
         opacity: 0;
     }
@@ -68,7 +68,7 @@ body,html{
 .card {
     font-family: SourceHan;
     position: relative;
-    animation: cardin ease-in 0.2s;
+    animation: alpha ease-in 0.2s;
     user-select: none;
     position: absolute;
     background-color: #fff;
@@ -188,6 +188,14 @@ body,html{
     align-items: center;
     justify-content: center;
 }
+.bottom{
+    font-size: 0.8em;
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: sloganinout ease-in 3000ms;
+}
 .slogan .slogan-title {
     font-weight: bold;
     font-size: 4em;
@@ -224,4 +232,28 @@ body,html{
 
 .highlight {
     color: #ff3a3a;
+}
+
+
+.pop-dialog {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;right: 0;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 0 20em;
+    box-sizing: border-box;
+    animation: alpha ease-in 100ms;
+    overflow-y: scroll;
+}
+.pop-dialog::-webkit-scrollbar{
+    display: none;
+}
+.pop-dialog a{
+    color: white;
+}
+.pop-dialog p{
+    margin: 10px;
+}
+.pop-dialog .bottom{
+    animation: none;
 }
