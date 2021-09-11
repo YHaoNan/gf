@@ -1,13 +1,14 @@
 (function(global){
-    // 一个屏幕中显示的DROP个数
-    var DROP_COUNT = 200;
+    // 一个屏幕中显示的最大DROP个数 算法问题，这个值在200-500之间比较安全
+    var DROP_COUNT = 260;
+    var PUSH_DROP_INTERVAL = Math.max(parseInt(document.body.clientHeight / DROP_COUNT),1);
     // 一个DROP的最小和最大大小
     var DROP_MIN_SIZE = 16, DROP_MAX_SIZE = 32;
     // 一个DROP最快最慢滴落速度
     // var DROP_MIN_SPEED = 0.16, DROP_MAX_SPEED = 0.2;
-    var DROP_MIN_SPEED = 1, DROP_MAX_SPEED = 2;
+    var DROP_MIN_SPEED = 0.8, DROP_MAX_SPEED = 1.4;
     // 一个DROP的方向，负数往左，正数往右
-    var DROP_MIN_DIR = -0.2, DROP_MAX_DIR = 0.2;
+    var DROP_MIN_DIR = -0.1, DROP_MAX_DIR = 0.1;
 
     var canvasWidth, canvasHeight, wordDrops, ctx, activeWordDrops = [], hoverPos={x:NaN,y:NaN}, clicked = false, hoverdDrop = null
 
@@ -43,6 +44,7 @@
     function handleClicked(drop,pos){
         showCard(drop,pos);
     }
+    var loopcnt = 0;
     function mainloop() {
         ctx.clearRect(0,0,canvasWidth,canvasHeight);
         // 遍历每一个当前处于active状态的drop
@@ -81,8 +83,11 @@
         activeWordDrops = activeWordDrops.filter(drop=>!drop.finished);
         // 尝试添加一个drop 因为几乎好几轮loop才会finished一个drop 所以 这样每次添加一个而不是一次性添加满
         // 如果当前屏幕的drop已经达到 DROP_COUNT 数量了，那么此次添加会静默失败
-        pushWordDrop(1);
-
+        if(++loopcnt==PUSH_DROP_INTERVAL){
+            pushWordDrop(1);
+            loopcnt = 0;
+        }
+        console.log(activeWordDrops.length);
         ctx.save()
 
         window.requestAnimationFrame(mainloop);
