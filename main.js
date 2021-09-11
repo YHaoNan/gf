@@ -7,7 +7,7 @@
     // var DROP_MIN_SPEED = 0.16, DROP_MAX_SPEED = 0.2;
     var DROP_MIN_SPEED = 1, DROP_MAX_SPEED = 2;
     // 一个DROP的方向，负数往左，正数往右
-    var DROP_MIN_DIR = -0.1, DROP_MAX_DIR = 0.1;
+    var DROP_MIN_DIR = -0.2, DROP_MAX_DIR = 0.2;
 
     var canvasWidth, canvasHeight, wordDrops, ctx, activeWordDrops = [], hoverPos={x:NaN,y:NaN}, clicked = false, hoverdDrop = null
 
@@ -84,10 +84,10 @@
         pushWordDrop(1);
 
         ctx.save()
-        window.requestAnimationFrame(mainloop)
-    }
 
-    global.onload = function() {
+        window.requestAnimationFrame(mainloop);
+    }
+    addOnload(function(){
         var canvas = document.getElementById("main-canvas");
         canvas.width = document.body.clientWidth;
         canvas.height = document.body.clientHeight;
@@ -106,5 +106,7 @@
 
 
         window.requestAnimationFrame(mainloop)
-    }
+    })
+    // global.onload = function() {
+    // }
 })(window);

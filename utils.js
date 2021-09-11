@@ -8,6 +8,14 @@ function randomFloat(min, max) {
 function randomOne(arr, start = 0, end = arr.length - 1) {
     return arr[randomInt(start, end)];
 }
+function addOnload(callback) {
+    var oldOnLoad = window.onload;
+    window.onload = function(){
+        if(oldOnLoad)
+            oldOnLoad();
+        callback();
+    }
+}
 function getRealXYInCanvas(canvas, x, y) {
     /**
         在canvas对象上调用getBoundingClientRect()方法，
