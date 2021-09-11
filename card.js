@@ -43,6 +43,7 @@ function showCard(drop, pos){
                         a({
                             klass: 'song-mv-link',
                             href: drop.song.video,
+                            attrs: {target: '_blank'},
                             text: '播放MV'
                         }),
                         span({klass: 'dot'}),
