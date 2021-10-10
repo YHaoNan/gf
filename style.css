@@ -1,7 +1,11 @@
 @font-face {
     font-family: SourceHan;
+    /* FROM LOCAL */
     /* src: url('./assets/SourceHanSerifCN-Regular-1.otf'); */
-    src: url('https://nsimg.cn-bj.ufileos.com/public/SourceHanSerifCN-Regular-1.otf');
+    /* FROM UCloud */
+    /* src: url('https://nsimg.cn-bj.ufileos.com/public/SourceHanSerifCN-Regular-1.otf'); */
+    /* FROM TENCENT CLOUD */
+    src: url('https://imgbucket-1258430731.cos.ap-beijing.myqcloud.com/public/SourceHanSerifCN-Regular-1.otf')
 }
 @keyframes alpha {
     from {
